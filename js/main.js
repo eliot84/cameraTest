@@ -21,17 +21,30 @@ canvas.width = 200;
 canvas.height = 200;
 
 
+/*
+navigator.mediaDevices.enumerateDevices()
+    .then(function(devices) {
+      console.log(devices);
+        // devices is an array of accessible audio and video inputs. deviceId is the property I used to switch cameras
+    })
+    .catch(function(err) {
+        console.log(err.name + ": " + error.message);
+});
+*/
+
+
+var front = false;
+document.getElementById('flip-button').onclick = function() { front = !front; };
 
 // Put variables in global scope to make them available to the browser console.
 var constraints = window.constraints = {
   audio: false,
-  video: true,
-  facingMode: "environment"
+  video: { facingMode: (front? "user" : "environment") }
 };
 
 
 
-
+// mediaDevices.enumerateDevices()
 
 
 
@@ -95,4 +108,4 @@ function errorMsg(msg, error) {
 }
 
 navigator.mediaDevices.getUserMedia(constraints).
-    then(handleSuccess).catch(handleError);
+  then(handleSuccess).catch(handleError);
