@@ -25,7 +25,8 @@ canvas.height = 200;
 // Put variables in global scope to make them available to the browser console.
 var constraints = window.constraints = {
   audio: false,
-  video: true
+  video: true,
+  facingMode: "environment"
 };
 
 
