@@ -39,9 +39,10 @@ document.getElementById('flip-button').onclick = function() { front = !front; };
 // Put variables in global scope to make them available to the browser console.
 var constraints = window.constraints = {
   audio: false,
-  video: { facingMode: (front? "user" : "environment") }
+  video: { facingMode: "environment" }
 };
 
+//  video: { facingMode: (front? "user" : "environment") }
 
 
 // mediaDevices.enumerateDevices()
