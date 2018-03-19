@@ -1,52 +1,60 @@
-<!DOCTYPE>
-<html lang="en">
-
-
+<!DOCTYPE html>
+<!--
+ *  Copyright (c) 2015 The WebRTC project authors. All Rights Reserved.
+ *
+ *  Use of this source code is governed by a BSD-style license
+ *  that can be found in the LICENSE file in the root of the source
+ *  tree.
+-->
+<html>
 <head>
-	<title></title>
 
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="description" content="WebRTC code samples">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+  <meta itemprop="description" content="Client-side WebRTC code samples">
+  <meta itemprop="name" content="WebRTC code samples">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta id="theme-color" name="theme-color" content="#ffffff">
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <base target="_blank">
 
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <title>getUserMedia</title>
+
+ 
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/main.css">
 
 </head>
 
-
 <body>
 
-<video autoplay></video>
+  <div id="container">
 
-<script>
-const constraints = {
-  video: true
-};
+    <div class="highlight">
+      <p>New codelab: <a href="https://codelabs.developers.google.com/codelabs/webrtc-web">Realtime communication with WebRTC</a></p>
+    </div>
 
-const video = document.querySelector('video');
+    <h1><a href="//webrtc.github.io/samples/" title="WebRTC samples homepage">WebRTC samples</a> <span>getUserMedia</span></h1>
 
-function handleSuccess(stream) {
-  video.srcObject = stream;
-}
+    <video id="gum-local" autoplay playsinline></video>
 
-function handleError(error) {
-  console.error('Reeeejected!', error);
-}
+    <div id="errorMsg"></div>
 
-navigator.mediaDevices.getUserMedia(constraints).
-  then(handleSuccess).catch(handleError);
-</script>
+    <p class="warning"><strong>Warning:</strong> if you're not using headphones, pressing play will cause feedback.</p>
 
+    <p>Display the video stream from <code>getUserMedia()</code> in a video element.</p>
 
+    <p>The <code>MediaStream</code> object <code>stream</code> passed to the <code>getUserMedia()</code> callback is in global scope, so you can inspect it from the console.</p>
 
+    <a href="https://github.com/webrtc/samples/tree/gh-pages/src/content/getusermedia/gum" title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>
+  </div>
 
-<!-- jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-</script>
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/main.js"></script>
 
-<script type="text/javascript" src="camera.js"></script>
+  <script src="js/lib/ga.js"></script>
+
 </body>
-
-
 </html>
