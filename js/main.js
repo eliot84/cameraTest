@@ -21,20 +21,14 @@ canvas.width = 200;
 canvas.height = 200;
 
 
+$(".videoCam").show();
+$(".picture").hide();
+
 /*
-navigator.mediaDevices.enumerateDevices()
-    .then(function(devices) {
-      console.log(devices);
-        // devices is an array of accessible audio and video inputs. deviceId is the property I used to switch cameras
-    })
-    .catch(function(err) {
-        console.log(err.name + ": " + error.message);
-});
-*/
-
-
+switching cameras
 var front = false;
 document.getElementById('flip-button').onclick = function() { front = !front; };
+*/
 
 // Put variables in global scope to make them available to the browser console.
 var constraints = window.constraints = {
@@ -42,22 +36,15 @@ var constraints = window.constraints = {
   video: { facingMode: "environment" }
 };
 
-//  video: { facingMode: (front? "user" : "environment") }
-
-
-// mediaDevices.enumerateDevices()
-
-
-
-
-
+//when a picture is taken do the following
 var snap = function() {
-
-  console.log("snap");
       // Define the size of the rectangle that will be filled (basically the entire element)
       context.fillRect(0, 0, 200, 200);
       // Grab the image from the video
       context.drawImage(video, 0, 0, 200, 200);
+
+      $(".videoCam").hide();
+      $(".picture").show();
     }
 
 

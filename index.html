@@ -21,28 +21,30 @@
 
   <title>getUserMedia</title>
 
- 
-  <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="css/main.css">
 
 </head>
 
 <body>
-dfgdfg
+<h3>Camera Feature</h3>
   <div id="container">
 
     <div class="highlight">
    
     </div>
 
-
+    <div class="videoCam">
     <video id="gum-local" autoplay playsinline></video>
-  <canvas></canvas>
+    </div>
 
+  <div class="picture">
+  <canvas class="snapped"></canvas>
+  </div>
     <!-- gives user the option to take the photo --> 
     <button id="snap" onclick="snap()">Take screenshot</button>
-    <button id="flip-button">Flip Camera</button>
 
+
+    <!-- DEBUGGING PURPOSES 
     <div id="errorMsg"></div>
 
     <p class="warning"><strong>Warning:</strong> if you're not using headphones, pressing play will cause feedback.</p>
@@ -50,13 +52,16 @@ dfgdfg
     <p>Display the video stream from <code>getUserMedia()</code> in a video element.</p>
 
     <p>The <code>MediaStream</code> object <code>stream</code> passed to the <code>getUserMedia()</code> callback is in global scope, so you can inspect it from the console.</p>
-
+    -->
    
   </div>
 
-  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
-  <script src="js/common.js"></script>
-  <script src="js/main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+
+<!-- Webrtc library adapter -->
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script src="js/main.js"></script>
 
   
 
